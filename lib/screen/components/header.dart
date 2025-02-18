@@ -15,6 +15,7 @@ class Header extends StatelessWidget {
           Text(
             'Hola, soy Gonzalez Rodrigo',
             style: Theme.of(context).textTheme.headlineLarge,
+            textAlign: TextAlign.center,
           ),
           const SizedBox(height: 16),
           RichText(
@@ -36,47 +37,49 @@ class Header extends StatelessWidget {
           const Text(
             'Especializado en el desarrollo de aplicaciones web únicas.',
             style: TextStyle(fontSize: 16, color: Colors.white70),
+            textAlign: TextAlign.center,
           ),
           const SizedBox(height: 32),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              HoverButton(
-                text: 'Contáctame',
-                icon: Icons.mail_outline,
-                isPrimary: true,
-                onPressed: () {},
-              ),
-              const SizedBox(width: 16),
-              HoverButton(
-                text: 'LinkedIn',
-                icon: FontAwesomeIcons.linkedin,
-                isPrimary: false,
-                onPressed: () {},
-              ),
-              const SizedBox(width: 16),
-              HoverButton(
-                text: 'Github',
-                icon: FontAwesomeIcons.github,
-                isPrimary: false,
-                onPressed: () {},
-              ),
-              const SizedBox(width: 16),
-              HoverButton(
-                text: 'PlayStore',
-                icon: FontAwesomeIcons.googlePlay,
-                isPrimary: false,
-                onPressed: () {},
-              ),
-              const SizedBox(width: 16),
-              HoverButton(
-                text: 'HackerRank',
-                icon: FontAwesomeIcons.hackerrank,
-                isPrimary: false,
-                onPressed: () {},
-              ),
-            ],
+          LayoutBuilder(
+            builder: (BuildContext context, BoxConstraints constraints) {
+              return Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 16,
+                runSpacing: 16,
+                children: [
+                  HoverButton(
+                    text: 'Contáctame',
+                    icon: Icons.mail_outline,
+                    isPrimary: true,
+                    onPressed: () {},
+                  ),
+                  HoverButton(
+                    text: 'LinkedIn',
+                    icon: FontAwesomeIcons.linkedin,
+                    isPrimary: false,
+                    onPressed: () {},
+                  ),
+                  HoverButton(
+                    text: 'Github',
+                    icon: FontAwesomeIcons.github,
+                    isPrimary: false,
+                    onPressed: () {},
+                  ),
+                  HoverButton(
+                    text: 'PlayStore',
+                    icon: FontAwesomeIcons.googlePlay,
+                    isPrimary: false,
+                    onPressed: () {},
+                  ),
+                  HoverButton(
+                    text: 'HackerRank',
+                    icon: FontAwesomeIcons.hackerrank,
+                    isPrimary: false,
+                    onPressed: () {},
+                  ),
+                ],
+              );
+            },
           ),
         ],
       ),

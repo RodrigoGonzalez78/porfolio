@@ -113,7 +113,9 @@ class _ProjectCardState extends State<ProjectCard> {
       onExit: (_) => setState(() => isHovered = false),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        //transform: isHovered ? Matrix4.identity()translate(0, -8, 0) : Matrix4.identity(),
+        transform: isHovered
+            ? (Matrix4.identity()..translate(0, -8, 0))
+            : Matrix4.identity(),
         child: Card(
           color: const Color(0xFF1A1F2E),
           elevation: isHovered ? 16 : 8,
@@ -125,9 +127,27 @@ class _ProjectCardState extends State<ProjectCard> {
                     const BorderRadius.vertical(top: Radius.circular(12)),
                 child: AspectRatio(
                   aspectRatio: 16 / 9,
-                  child: Image.network(
-                    widget.imageUrl,
-                    fit: BoxFit.cover,
+                  child: Stack(
+                    children: [
+                      Image.network(
+                        widget.imageUrl,
+                        fit: BoxFit.cover,
+                      ),
+                      AnimatedOpacity(
+                        duration: const Duration(milliseconds: 200),
+                        opacity: isHovered ? 1.0 : 0.0,
+                        child: Container(
+                          color: Colors.black.withOpacity(0.5),
+                          child: const Center(
+                            child: Icon(
+                              Icons.zoom_in,
+                              color: Colors.white,
+                              size: 48,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -136,12 +156,16 @@ class _ProjectCardState extends State<ProjectCard> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      widget.title,
-                      style: const TextStyle(
-                        fontSize: 24,
+                    AnimatedDefaultTextStyle(
+                      duration: const Duration(milliseconds: 200),
+                      style: TextStyle(
+                        fontSize: isHovered ? 26 : 24,
                         fontWeight: FontWeight.bold,
+                        color: isHovered
+                            ? Theme.of(context).primaryColor
+                            : Colors.white,
                       ),
+                      child: Text(widget.title),
                     ),
                     const SizedBox(height: 16),
                     Text(
@@ -156,9 +180,25 @@ class _ProjectCardState extends State<ProjectCard> {
                       spacing: 8,
                       runSpacing: 8,
                       children: [
-                        ...widget.technologies.map((tech) => Chip(
-                              label: Text(tech),
-                              backgroundColor: Colors.white.withOpacity(0.1),
+                        ...widget.technologies.map((tech) => AnimatedContainer(
+                              duration: const Duration(milliseconds: 200),
+                              padding: EdgeInsets.all(isHovered ? 10 : 8),
+                              decoration: BoxDecoration(
+                                color: isHovered
+                                    ? Theme.of(context)
+                                        .primaryColor
+                                        .withOpacity(0.2)
+                                    : Colors.white.withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Text(
+                                tech,
+                                style: TextStyle(
+                                  color: isHovered
+                                      ? Theme.of(context).primaryColor
+                                      : Colors.white,
+                                ),
+                              ),
                             )),
                       ],
                     ),
@@ -166,26 +206,46 @@ class _ProjectCardState extends State<ProjectCard> {
                     Row(
                       children: [
                         if (widget.hasCode)
-                          OutlinedButton.icon(
+                          AnimatedContainer(
+                            duration: const Duration(milliseconds: 200),
+                            margin: EdgeInsets.only(right: isHovered ? 20 : 16),
+                            child: OutlinedButton.icon(
+                              onPressed: () {},
+                              icon: const Icon(Icons.code),
+                              label: const Text('Code'),
+                              style: OutlinedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 24,
+                                  vertical: 16,
+                                ),
+                                foregroundColor: isHovered
+                                    ? Theme.of(context).primaryColor
+                                    : Colors.white,
+                                side: BorderSide(
+                                  color: isHovered
+                                      ? Theme.of(context).primaryColor
+                                      : Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        AnimatedContainer(
+                          duration: const Duration(milliseconds: 200),
+                          margin: EdgeInsets.only(left: isHovered ? 4 : 0),
+                          child: ElevatedButton.icon(
                             onPressed: () {},
-                            icon: const Icon(Icons.code),
-                            label: const Text('Code'),
-                            style: OutlinedButton.styleFrom(
+                            icon: const Icon(Icons.preview),
+                            label: const Text('Preview'),
+                            style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 24,
                                 vertical: 16,
                               ),
-                            ),
-                          ),
-                        const SizedBox(width: 16),
-                        ElevatedButton.icon(
-                          onPressed: () {},
-                          icon: const Icon(Icons.preview),
-                          label: const Text('Preview'),
-                          style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 24,
-                              vertical: 16,
+                              backgroundColor: isHovered
+                                  ? Theme.of(context).primaryColor
+                                  : null,
+                              foregroundColor:
+                                  isHovered ? Colors.black : Colors.white,
                             ),
                           ),
                         ),
