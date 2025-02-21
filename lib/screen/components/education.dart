@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Education extends StatelessWidget {
   const Education({super.key});
@@ -26,17 +25,17 @@ class Education extends StatelessWidget {
             ),
             const SizedBox(height: 32),
             const EducationItem(
-              title: 'Máster en Desarrollo Web',
-              institution: 'Universidad Tecnológica',
-              period: '2010 - 2012',
+              title: 'Licenciatura en Sistemas de Información',
+              institution: 'Universidad Nacional del Nordeste',
+              period: 'En curso',
               description:
-                  'Especialización en tecnologías web modernas, incluyendo frontend y backend. Proyecto final: Desarrollo de una plataforma de e-learning con React y Node.js.',
-              showMoreLink: true,
+                  'Formación integral en ciencias de la computación, algoritmos, estructuras de datos y desarrollo de software.',
+              showMoreLink: false,
             ),
             const EducationItem(
-              title: 'Ingeniería en Informática',
-              institution: 'Universidad Politécnica',
-              period: '2005 - 2009',
+              title: 'Técnico en Informática Personal y Profecional',
+              institution: 'Escuela Técnica Ita Ibate',
+              period: '2012 - 2020',
               description:
                   'Formación integral en ciencias de la computación, algoritmos, estructuras de datos y desarrollo de software. Graduado con honores.',
               showMoreLink: false,

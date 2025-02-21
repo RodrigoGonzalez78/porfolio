@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:porfolio/utils/utils.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
@@ -23,19 +24,18 @@ class Header extends StatelessWidget {
             text: TextSpan(
               style: GoogleFonts.inter(fontSize: 16, color: Colors.white70),
               children: [
-                const TextSpan(text: '+15 años de experiencia. '),
+                const TextSpan(text: 'Ingeniero de Software enfocado en el '),
                 TextSpan(
-                  text:
-                      'Ingeniero de Software y Creador de Contenido sobre Programación',
+                  text: 'Desarrollo Mobil y Backend',
                   style: TextStyle(color: Theme.of(context).primaryColor),
                 ),
-                const TextSpan(text: ' de Barcelona, España 🇪🇸'),
+                const TextSpan(text: ' de Corrientes, Argentina 🇦🇷'),
               ],
             ),
           ),
           const SizedBox(height: 16),
           const Text(
-            'Especializado en el desarrollo de aplicaciones web únicas.',
+            'Especializado en el desarrollo de aplicaciones Apps únicas.',
             style: TextStyle(fontSize: 16, color: Colors.white70),
             textAlign: TextAlign.center,
           ),
@@ -51,31 +51,48 @@ class Header extends StatelessWidget {
                     text: 'Contáctame',
                     icon: Icons.mail_outline,
                     isPrimary: true,
-                    onPressed: () {},
+                    onPressed: () {
+                      launchEmail(
+                        'gonzlrodrigo@gmail.com',
+                        subject: 'Consulta',
+                        body: 'Hola, quiero más información sobre...',
+                      );
+                    },
                   ),
                   HoverButton(
                     text: 'LinkedIn',
                     icon: FontAwesomeIcons.linkedin,
                     isPrimary: false,
-                    onPressed: () {},
+                    onPressed: () {
+                      launchLink(
+                          'https://www.linkedin.com/in/rodrigo-gonzalez-developer/');
+                    },
                   ),
                   HoverButton(
                     text: 'Github',
                     icon: FontAwesomeIcons.github,
                     isPrimary: false,
-                    onPressed: () {},
+                    onPressed: () {
+                      launchLink('https://github.com/RodrigoGonzalez78');
+                    },
                   ),
                   HoverButton(
                     text: 'PlayStore',
                     icon: FontAwesomeIcons.googlePlay,
                     isPrimary: false,
-                    onPressed: () {},
+                    onPressed: () {
+                      launchLink(
+                          'https://play.google.com/store/apps/dev?id=5093230411941529525&hl=es_AR');
+                    },
                   ),
                   HoverButton(
                     text: 'HackerRank',
                     icon: FontAwesomeIcons.hackerrank,
                     isPrimary: false,
-                    onPressed: () {},
+                    onPressed: () {
+                      launchLink(
+                          'https://www.hackerrank.com/profile/gonzlrodrigo');
+                    },
                   ),
                 ],
               );

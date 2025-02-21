@@ -128,8 +128,8 @@ class Particle {
 Future<ui.Image> createParticleImage() async {
   final recorder = ui.PictureRecorder();
   final canvas = Canvas(recorder);
-  final size = Size(8, 8);
-  final paint = Paint()..color = Colors.white;
+  const size = Size(8, 8);
+  final paint = Paint()..color = Color.fromARGB(255, 8, 131, 149);
 
   canvas.drawCircle(size.center(Offset.zero), 3, paint);
 
