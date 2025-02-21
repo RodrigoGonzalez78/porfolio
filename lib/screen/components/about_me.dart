@@ -37,40 +37,14 @@ class AboutMe extends StatelessWidget {
                         color: Colors.white70,
                         height: 1.6,
                       ),
-                      children: [
-                        const TextSpan(
+                      children: const [
+                        TextSpan(
                           text:
-                              'Me llamo Miguel Ángel pero mis amigos me llaman midu. Empecé en la programación con un Amstrad, tenía 10 años. Actualmente estoy ',
+                              'Me llamo Rodrigo Alejandro González. Comencé mi camino en la programación con Java en la secundaria, y más tarde me adentré en el desarrollo de videojuegos como hobby, utilizando Unity y C#.\n',
                         ),
                         TextSpan(
                           text:
-                              'liderando equipos de desarrollo en multinacionales',
-                          style:
-                              TextStyle(color: Theme.of(context).primaryColor),
-                        ),
-                        const TextSpan(
-                            text: '.\n\nAlgunos de mis éxitos incluyen '),
-                        TextSpan(
-                          text:
-                              'colaborar con Mozilla para el desarrollo de las primeras apps en su sistema FirefoxOS',
-                          style: TextStyle(
-                            fontFamily: GoogleFonts.firaCode().fontFamily,
-                            backgroundColor: Colors.white.withOpacity(0.1),
-                          ),
-                        ),
-                        const TextSpan(
-                          text:
-                              '. Aunque hoy está desaparecido fue un gran avance en el mundo del desarrollo web.\n\nComo creador de contenido, cuento con ',
-                        ),
-                        TextSpan(
-                          text:
-                              'el canal de habla hispana más visto del mundo en la categoría de Software & Game Development en Twitch',
-                          style:
-                              TextStyle(color: Theme.of(context).primaryColor),
-                        ),
-                        const TextSpan(
-                          text:
-                              '. Mi objetivo es mejorar la empleabilidad de la comunidad hispana y el acceso a contenido de calidad.',
+                              'Hoy en día, me especializo en el desarrollo de aplicaciones móviles, desde el diseño hasta su publicación, aplicando buenas prácticas como Clean Architecture e inyección de dependencias. Me esfuerzo por mantenerme en constante aprendizaje, mejorando mis habilidades y desarrollando mis propios backends, adquiriendo conocimientos en APIs REST, bases de datos, arquitectura y redes, usando para esto Golang y Python.',
                         ),
                       ],
                     ),

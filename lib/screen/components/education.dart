@@ -37,7 +37,7 @@ class Education extends StatelessWidget {
               institution: 'Escuela Técnica Ita Ibate',
               period: '2012 - 2020',
               description:
-                  'Formación integral en ciencias de la computación, algoritmos, estructuras de datos y desarrollo de software. Graduado con honores.',
+                  'Me introdujo al mundo de la computación, aprendiendo los conceptos básicos de hardware y software.',
               showMoreLink: false,
             ),
           ],

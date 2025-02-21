@@ -14,7 +14,7 @@ class Header extends StatelessWidget {
         children: [
           const SizedBox(height: 24),
           Text(
-            'Hola, soy Gonzalez Rodrigo',
+            'Hola, soy Rodrigo',
             style: Theme.of(context).textTheme.headlineLarge,
             textAlign: TextAlign.center,
           ),
