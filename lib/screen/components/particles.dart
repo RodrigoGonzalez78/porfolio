@@ -5,7 +5,7 @@ import 'dart:ui' as ui;
 class ParticleBackground extends StatefulWidget {
   final Widget child;
 
-  const ParticleBackground({Key? key, required this.child}) : super(key: key);
+  const ParticleBackground({super.key, required this.child});
 
   @override
   _ParticleBackgroundState createState() => _ParticleBackgroundState();
@@ -41,9 +41,7 @@ class _ParticleBackgroundState extends State<ParticleBackground>
   }
 
   void _initializeParticles(Size size) {
-    if (particles == null) {
-      particles = List.generate(30, (_) => Particle(particleImage!, size));
-    }
+    particles ??= List.generate(30, (_) => Particle(particleImage!, size));
   }
 
   @override
@@ -61,7 +59,7 @@ class _ParticleBackgroundState extends State<ParticleBackground>
                   return CustomPaint(
                     painter: ParticlePainter(
                       particles: particles!,
-                      particleColor: Color(0xFFFFD700).withOpacity(0.2),
+                      particleColor: const Color(0xFFFFD700).withOpacity(0.2),
                     ),
                     size: size,
                   );
@@ -129,7 +127,7 @@ Future<ui.Image> createParticleImage() async {
   final recorder = ui.PictureRecorder();
   final canvas = Canvas(recorder);
   const size = Size(8, 8);
-  final paint = Paint()..color = Color.fromARGB(255, 8, 131, 149);
+  final paint = Paint()..color = const Color.fromARGB(255, 8, 131, 149);
 
   canvas.drawCircle(size.center(Offset.zero), 3, paint);
 

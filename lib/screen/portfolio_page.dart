@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:porfolio/screen/components/about_me.dart';
 import 'package:porfolio/screen/components/certifications.dart';
 import 'package:porfolio/screen/components/education.dart';
-import 'package:porfolio/screen/components/experience.dart';
 import 'package:porfolio/screen/components/header.dart';
 import 'package:porfolio/screen/components/particles.dart';
 import 'package:porfolio/screen/components/proyects.dart';

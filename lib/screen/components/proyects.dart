@@ -1,10 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:porfolio/utils/utils.dart';
 
 class Projects extends StatelessWidget {
   const Projects({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const ProjectCard proyectCard1 = ProjectCard(
+      title: 'MountainTech - Ecommerce de Hardware',
+      description:
+          'Pagina web de venta de componentes de computadora. Hecha completamente con Golang, HTML, CSS, Bootstrap. Utilisando el sistema de renderisado de plantillas en el Servidor de Golang.',
+      imageAsset: 'assets/images/home.png',
+      technologies: ['Golang', 'PostgreSQL', 'HTML', 'CSS'],
+      hasCode: true,
+      codeLink: 'https://github.com/RodrigoGonzalez78/ecommerce_web',
+      hasPreview: false,
+      previewLink: '',
+    );
+
+    const ProjectCard projectCard2 = ProjectCard(
+      title: 'Twitter(X) Clone App',
+      description:
+          'Hecha desde cero con android nativo para la aplicacion usando Retrofit, Room, injección de dependencias y Clean Arquitecture, tambien hice el backend con Golang usando MongoDB, JWT y Gorilla Mux. ',
+      imageAsset:
+          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20desde%202025-02-16%2016-14-50-fMQ0icMjygMVZRH8bxpGrkbktig6lb.png',
+      technologies: [
+        'Golang',
+        'Android',
+        'Jetpack Compose',
+        'Retrofit',
+        'Hilt',
+        'Room'
+      ],
+      hasCode: true,
+      codeLink: '',
+      hasPreview: false,
+      previewLink: '',
+    );
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 64),
       child: Column(
@@ -27,52 +60,16 @@ class Projects extends StatelessWidget {
                   ? const Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(
-                          child: ProjectCard(
-                            title: 'SVGL - A beautiful library with SVG logos',
-                            description:
-                                'Biblioteca de logos SVG de las marcas más populares. +10K visitas al mes. +2K svgs descargados.',
-                            imageUrl:
-                                'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20desde%202025-02-16%2016-14-50-fMQ0icMjygMVZRH8bxpGrkbktig6lb.png',
-                            technologies: ['Next.js', 'Tailwind CSS'],
-                            hasCode: true,
-                          ),
-                        ),
+                        Expanded(child: proyectCard1),
                         SizedBox(width: 32),
-                        Expanded(
-                          child: ProjectCard(
-                            title: 'AdventJS - Retos de programación',
-                            description:
-                                'Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados.',
-                            imageUrl:
-                                'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20desde%202025-02-16%2016-14-50-fMQ0icMjygMVZRH8bxpGrkbktig6lb.png',
-                            technologies: ['Next.js', 'Tailwind CSS'],
-                            hasCode: false,
-                          ),
-                        ),
+                        Expanded(child: projectCard2),
                       ],
                     )
                   : const Column(
                       children: [
-                        ProjectCard(
-                          title: 'SVGL - A beautiful library with SVG logos',
-                          description:
-                              'Biblioteca de logos SVG de las marcas más populares. +10K visitas al mes. +2K svgs descargados.',
-                          imageUrl:
-                              'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20desde%202025-02-16%2016-14-50-fMQ0icMjygMVZRH8bxpGrkbktig6lb.png',
-                          technologies: ['Next.js', 'Tailwind CSS'],
-                          hasCode: true,
-                        ),
+                        proyectCard1,
                         SizedBox(height: 32),
-                        ProjectCard(
-                          title: 'AdventJS - Retos de programación',
-                          description:
-                              'Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados.',
-                          imageUrl:
-                              'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20desde%202025-02-16%2016-14-50-fMQ0icMjygMVZRH8bxpGrkbktig6lb.png',
-                          technologies: ['Next.js', 'Tailwind CSS'],
-                          hasCode: false,
-                        ),
+                        projectCard2,
                       ],
                     );
             },
@@ -86,18 +83,23 @@ class Projects extends StatelessWidget {
 class ProjectCard extends StatefulWidget {
   final String title;
   final String description;
-  final String imageUrl;
+  final String imageAsset;
   final List<String> technologies;
   final bool hasCode;
+  final String codeLink;
+  final bool hasPreview;
+  final String previewLink;
 
-  const ProjectCard({
-    super.key,
-    required this.title,
-    required this.description,
-    required this.imageUrl,
-    required this.technologies,
-    required this.hasCode,
-  });
+  const ProjectCard(
+      {super.key,
+      required this.title,
+      required this.description,
+      required this.imageAsset,
+      required this.technologies,
+      required this.hasCode,
+      required this.codeLink,
+      required this.hasPreview,
+      required this.previewLink});
 
   @override
   State<ProjectCard> createState() => _ProjectCardState();
@@ -129,8 +131,8 @@ class _ProjectCardState extends State<ProjectCard> {
                   aspectRatio: 16 / 9,
                   child: Stack(
                     children: [
-                      Image.network(
-                        widget.imageUrl,
+                      Image.asset(
+                        widget.imageAsset,
                         fit: BoxFit.cover,
                       ),
                       AnimatedOpacity(
@@ -138,13 +140,6 @@ class _ProjectCardState extends State<ProjectCard> {
                         opacity: isHovered ? 1.0 : 0.0,
                         child: Container(
                           color: Colors.black.withOpacity(0.5),
-                          child: const Center(
-                            child: Icon(
-                              Icons.zoom_in,
-                              color: Colors.white,
-                              size: 48,
-                            ),
-                          ),
                         ),
                       ),
                     ],
@@ -210,7 +205,9 @@ class _ProjectCardState extends State<ProjectCard> {
                             duration: const Duration(milliseconds: 200),
                             margin: EdgeInsets.only(right: isHovered ? 20 : 16),
                             child: OutlinedButton.icon(
-                              onPressed: () {},
+                              onPressed: () {
+                                launchLink(widget.codeLink);
+                              },
                               icon: const Icon(Icons.code),
                               label: const Text('Code'),
                               style: OutlinedButton.styleFrom(
@@ -229,26 +226,29 @@ class _ProjectCardState extends State<ProjectCard> {
                               ),
                             ),
                           ),
-                        AnimatedContainer(
-                          duration: const Duration(milliseconds: 200),
-                          margin: EdgeInsets.only(left: isHovered ? 4 : 0),
-                          child: ElevatedButton.icon(
-                            onPressed: () {},
-                            icon: const Icon(Icons.preview),
-                            label: const Text('Preview'),
-                            style: ElevatedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 24,
-                                vertical: 16,
+                        if (widget.hasPreview)
+                          AnimatedContainer(
+                            duration: const Duration(milliseconds: 200),
+                            margin: EdgeInsets.only(left: isHovered ? 4 : 0),
+                            child: ElevatedButton.icon(
+                              onPressed: () {
+                                launchLink(widget.previewLink);
+                              },
+                              icon: const Icon(Icons.preview),
+                              label: const Text('Preview'),
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 24,
+                                  vertical: 16,
+                                ),
+                                backgroundColor: isHovered
+                                    ? Theme.of(context).primaryColor
+                                    : null,
+                                foregroundColor:
+                                    isHovered ? Colors.black : Colors.white,
                               ),
-                              backgroundColor: isHovered
-                                  ? Theme.of(context).primaryColor
-                                  : null,
-                              foregroundColor:
-                                  isHovered ? Colors.black : Colors.white,
                             ),
                           ),
-                        ),
                       ],
                     ),
                   ],
