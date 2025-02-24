@@ -36,6 +36,7 @@ class Skills extends StatelessWidget {
               Skill(name: 'SQL', icon: FontAwesomeIcons.database),
               Skill(name: 'Docker', icon: FontAwesomeIcons.docker),
               Skill(name: 'Git', icon: FontAwesomeIcons.git),
+              Skill(name: 'GitHub', icon: FontAwesomeIcons.github),
             ],
           ),
         ],

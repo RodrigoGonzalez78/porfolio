@@ -19,7 +19,7 @@ class Certifications extends StatelessWidget {
               const Icon(Icons.verified_outlined, size: 24),
               const SizedBox(width: 12),
               Text(
-                'Certificaciones',
+                'Certificaciones y Cursos',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
             ],
@@ -55,6 +55,37 @@ class Certifications extends StatelessWidget {
                     'Cubre temas como tipos escalares, operadores y flujo de control, cadenas, colecciones e iteración, modularidad, objetos y tipos y clases.',
                 icon: FontAwesomeIcons.hackerrank,
                 link: 'https://www.hackerrank.com/certificates/76b51c0f9dd9',
+              ),
+              CertificationCard(
+                title: 'Programación de Aplicaciones para Android con Kotlin',
+                institution: 'Udemy',
+                date: 'Julio 2024',
+                description:
+                    'Curso de desarrollo Android con Kotlin desde cero hasta un nivel avanzado, cubriendo Kotlin, POO, debugging, componentes de una app y buenas prácticas.',
+                icon: FontAwesomeIcons.u,
+                link:
+                    'https://www.udemy.com/certificate/UC-148a7f74-4fd1-4b57-9472-734b4b27f638/',
+              ),
+              CertificationCard(
+                title: 'Aprende lenguaje GO (GOLANG) desde 0',
+                institution: 'Udemy',
+                date: 'Febrero 2022',
+                description:
+                    'Go desde lo básico hasta lo intermedio, incluyendo POO, estructuras, APIs REST y tecnologías como GitHub y MongoDB, desarrollando un backend',
+                icon: FontAwesomeIcons.u,
+                link:
+                    'https://www.udemy.com/certificate/UC-5b67cccc-6576-415b-b5d7-70b1402c94b9/',
+              ),
+              CertificationCard(
+                title:
+                    'SQL - Curso completo de Bases de Datos - de 0 a Avanzado',
+                institution: 'Udemy',
+                date: 'Noviembre 2023',
+                description:
+                    'Bases de Datos, MySQL, teoría y práctica, Lenguaje SQL completo, Base de datos MySQL, Diagrama EER.',
+                icon: FontAwesomeIcons.u,
+                link:
+                    'https://www.udemy.com/certificate/UC-e00ef6ae-ea8d-40bf-8e28-c29e6763f324/',
               ),
             ],
           ),
