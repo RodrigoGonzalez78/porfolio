@@ -35,7 +35,7 @@ class Header extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           const Text(
-            'Especializado en el desarrollo de aplicaciones Apps únicas.',
+            'Especializado en el desarrollo de aplicaciones únicas.',
             style: TextStyle(fontSize: 16, color: Colors.white70),
             textAlign: TextAlign.center,
           ),

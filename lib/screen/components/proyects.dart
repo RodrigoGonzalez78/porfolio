@@ -11,7 +11,7 @@ class Projects extends StatelessWidget {
       description:
           'Pagina web de venta de componentes de computadora. Hecha completamente con Golang, HTML, CSS, Bootstrap. Utilisando el sistema de renderisado de plantillas en el Servidor de Golang.',
       imageAsset: 'assets/images/home.png',
-      technologies: ['Golang', 'PostgreSQL', 'HTML', 'CSS'],
+      technologies: ['Golang', 'PostgreSQL', 'HTML', 'CSS', "JWT"],
       hasCode: true,
       codeLink: 'https://github.com/RodrigoGonzalez78/ecommerce_web',
       hasPreview: false,
