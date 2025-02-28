@@ -38,6 +38,40 @@ class Projects extends StatelessWidget {
       previewLink: '',
     );
 
+    const ProjectCard projectCard3 = ProjectCard(
+      title: 'Investigación sobre Microservicios',
+      description:
+          'Realicé un proyecto de investigaciónen el que comparé las arquitecturas monolíticas y de microservicios, así como los desafíos prácticos asociados a la implementación de cada una.',
+      imageAsset: 'assets/images/micro.png',
+      technologies: [
+        'Golang',
+        'Docker',
+        'JMeter',
+        'PostgresSQL',
+      ],
+      hasCode: true,
+      codeLink: '',
+      hasPreview: false,
+      previewLink: '',
+    );
+    const ProjectCard projectCard4 = ProjectCard(
+      title: 'Task Manager',
+      description:
+          'Este proyecto es una aplicación para la gestión de tareas desarrollada en Golang, utilizando Gorilla Mux para enrutamiento, GORM para interacción con PostgreSQL y autenticación segura con JWT.',
+      imageAsset:
+          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20desde%202025-02-16%2016-14-50-fMQ0icMjygMVZRH8bxpGrkbktig6lb.png',
+      technologies: [
+        'Golang',
+        'Android',
+        'Jetpack Compose',
+        'Retrofit',
+      ],
+      hasCode: true,
+      codeLink: '',
+      hasPreview: false,
+      previewLink: '',
+    );
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 64),
       child: Column(
@@ -57,19 +91,31 @@ class Projects extends StatelessWidget {
           LayoutBuilder(
             builder: (context, constraints) {
               return constraints.maxWidth > 800
-                  ? const Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(child: proyectCard1),
-                        SizedBox(width: 32),
-                        Expanded(child: projectCard2),
-                      ],
-                    )
+                  ? const Column(children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(child: proyectCard1),
+                          SizedBox(width: 32),
+                          Expanded(child: projectCard2),
+                        ],
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(child: projectCard3),
+                          SizedBox(width: 32),
+                          Expanded(child: projectCard4),
+                        ],
+                      ),
+                    ])
                   : const Column(
                       children: [
                         proyectCard1,
                         SizedBox(height: 32),
                         projectCard2,
+                        SizedBox(height: 32),
+                        projectCard3,
                       ],
                     );
             },
