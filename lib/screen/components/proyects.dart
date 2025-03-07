@@ -32,7 +32,7 @@ class Projects extends StatelessWidget {
         'Room'
       ],
       hasCode: true,
-      codeLink: '',
+      codeLink: 'https://github.com/RodrigoGonzalez78/TwitterCloneApp',
       hasPreview: false,
       previewLink: '',
     );
@@ -51,7 +51,8 @@ class Projects extends StatelessWidget {
         'Prometheus'
       ],
       hasCode: true,
-      codeLink: '',
+      codeLink:
+          'https://github.com/RodrigoGonzalez78/microservicios_task_managment',
       hasPreview: false,
       previewLink: '',
     );
