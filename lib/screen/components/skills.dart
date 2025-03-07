@@ -32,6 +32,7 @@ class Skills extends StatelessWidget {
               Skill(name: 'Kotlin', icon: FontAwesomeIcons.k),
               Skill(name: 'Dart', icon: FontAwesomeIcons.dartLang),
               Skill(name: 'Golang', icon: FontAwesomeIcons.golang),
+              Skill(name: 'Python', icon: FontAwesomeIcons.python),
               Skill(name: 'SQL', icon: FontAwesomeIcons.database),
               Skill(name: 'Docker', icon: FontAwesomeIcons.docker),
               Skill(name: 'Git', icon: FontAwesomeIcons.git),

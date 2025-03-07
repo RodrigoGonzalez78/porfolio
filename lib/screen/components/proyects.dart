@@ -9,7 +9,7 @@ class Projects extends StatelessWidget {
     const ProjectCard proyectCard1 = ProjectCard(
       title: 'MountainTech - Ecommerce de Hardware',
       description:
-          'Pagina web de venta de componentes de computadora. Hecha completamente con Golang, HTML, CSS, Bootstrap. Utilisando el sistema de renderisado de plantillas en el Servidor de Golang.',
+          'Tienda venta de componentes de computadora. Hecha completamente con Golang, HTML, CSS, Bootstrap. Utilisando el sistema de renderisado de plantillas en el Servidor de Golang y PostgreSQL para almacenar los datos.',
       imageAsset: 'assets/images/home.png',
       technologies: ['Golang', 'PostgreSQL', 'HTML', 'CSS', "JWT"],
       hasCode: true,
@@ -41,13 +41,15 @@ class Projects extends StatelessWidget {
     const ProjectCard projectCard3 = ProjectCard(
       title: 'Investigación sobre Microservicios',
       description:
-          'Realicé un proyecto de investigaciónen el que comparé las arquitecturas monolíticas y de microservicios, así como los desafíos prácticos asociados a la implementación de cada una.',
+          'Realicé un proyecto de investigación en el que comparé las arquitecturas monolíticas y de microservicios, desde el diseño, implementación, pruebas de carga y monitorización.',
       imageAsset: 'assets/images/micro.png',
       technologies: [
         'Golang',
         'Docker',
         'JMeter',
         'PostgresSQL',
+        'Grafana',
+        'Prometheus'
       ],
       hasCode: true,
       codeLink: '',
@@ -57,17 +59,17 @@ class Projects extends StatelessWidget {
     const ProjectCard projectCard4 = ProjectCard(
       title: 'Task Manager',
       description:
-          'Este proyecto es una aplicación para la gestión de tareas desarrollada en Golang, utilizando Gorilla Mux para enrutamiento, GORM para interacción con PostgreSQL y autenticación segura con JWT.',
-      imageAsset:
-          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20desde%202025-02-16%2016-14-50-fMQ0icMjygMVZRH8bxpGrkbktig6lb.png',
+          'Una aplicación escrita en Android nativo, con Retrofit, Hilt y DataStore. Esta se basa en una API que construí con Golang, usando Gorilla Mux, GORM, PostgreSQL y autenticación con JWT',
+      imageAsset: 'assets/images/task.jpg',
       technologies: [
         'Golang',
-        'Android',
+        'PostgresSQL',
         'Jetpack Compose',
         'Retrofit',
+        'Hilt'
       ],
       hasCode: true,
-      codeLink: '',
+      codeLink: 'https://github.com/RodrigoGonzalez78/TasksApp',
       hasPreview: false,
       previewLink: '',
     );
@@ -116,6 +118,8 @@ class Projects extends StatelessWidget {
                         projectCard2,
                         SizedBox(height: 32),
                         projectCard3,
+                        SizedBox(height: 32),
+                        projectCard4,
                       ],
                     );
             },
