@@ -22,8 +22,7 @@ class Projects extends StatelessWidget {
       title: 'Twitter(X) Clone App',
       description:
           'Hecha desde cero con android nativo para la aplicacion usando Retrofit, Room, injección de dependencias y Clean Arquitecture, tambien hice el backend con Golang usando MongoDB, JWT y Gorilla Mux. ',
-      imageAsset:
-          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20desde%202025-02-16%2016-14-50-fMQ0icMjygMVZRH8bxpGrkbktig6lb.png',
+      imageAsset: 'assets/images/tweet.jpg',
       technologies: [
         'Golang',
         'Android',
