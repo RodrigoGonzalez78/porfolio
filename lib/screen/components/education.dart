@@ -33,6 +33,14 @@ class Education extends StatelessWidget {
               showMoreLink: false,
             ),
             const EducationItem(
+              title: 'Analista Programador Universitario',
+              institution: 'Universidad Nacional del Nordeste',
+              period: '2021-2025',
+              description:
+                  'Formación integral en ciencias de la computación, algoritmos, estructuras de datos y desarrollo de software.',
+              showMoreLink: false,
+            ),
+            const EducationItem(
               title: 'Técnico en Informática Personal y Profecional',
               institution: 'Escuela Técnica Ita Ibate',
               period: '2012 - 2020',

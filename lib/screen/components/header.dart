@@ -34,11 +34,6 @@ class Header extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          const Text(
-            'Especializado en el desarrollo de aplicaciones únicas.',
-            style: TextStyle(fontSize: 16, color: Colors.white70),
-            textAlign: TextAlign.center,
-          ),
           const SizedBox(height: 32),
           LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
@@ -47,18 +42,6 @@ class Header extends StatelessWidget {
                 spacing: 16,
                 runSpacing: 16,
                 children: [
-                  HoverButton(
-                    text: 'Contáctame',
-                    icon: Icons.mail_outline,
-                    isPrimary: true,
-                    onPressed: () {
-                      launchEmail(
-                        'gonzlrodrigo@gmail.com',
-                        subject: 'Consulta',
-                        body: 'Hola, quiero más información sobre...',
-                      );
-                    },
-                  ),
                   HoverButton(
                     text: 'LinkedIn',
                     icon: FontAwesomeIcons.linkedin,

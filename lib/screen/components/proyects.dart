@@ -74,6 +74,39 @@ class Projects extends StatelessWidget {
       previewLink: '',
     );
 
+    const ProjectCard projectCard5 = ProjectCard(
+      title: 'Api de Procesamiento de Imágenes',
+      description:
+          'Realice un API RESTful en Golang que permite subir imágenes, almacenarlas y aplicarles diferentes filtros, como escala de grises, sepia, etc. Utiliza GORM para la gestión de la base de datos y JWT para la autenticación de usuarios.',
+      imageAsset: 'assets/images/img_proc.png',
+      technologies: [
+        'Golang',
+        'SQLite',
+        'Jeson Web Token',
+        'GORM',
+        'Gorilla Mux',
+      ],
+      hasCode: true,
+      codeLink: 'https://github.com/RodrigoGonzalez78/image_processing',
+      hasPreview: false,
+      previewLink: '',
+    );
+    const ProjectCard projectCard6 = ProjectCard(
+      title: 'Getor de Gastos',
+      description:
+          'Aplicación hecha en flutter que permite gestionar los gastos y ingresos de una persona. Utiliza Provider para la gestión del estado y SQLite para el almacenamiento de datos.',
+      imageAsset: 'assets/images/gestion.png',
+      technologies: [
+        'Flutter',
+        'SQLite',
+        'Provider',
+      ],
+      hasCode: false,
+      codeLink: '',
+      hasPreview: true,
+      previewLink:
+          'https://play.google.com/store/apps/details?id=com.rocketstudio99.gestor_de_gastos&hl=es_AR',
+    );
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 64),
       child: Column(
@@ -110,6 +143,14 @@ class Projects extends StatelessWidget {
                           Expanded(child: projectCard4),
                         ],
                       ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(child: projectCard5),
+                          SizedBox(width: 32),
+                          Expanded(child: projectCard6),
+                        ],
+                      ),
                     ])
                   : const Column(
                       children: [
@@ -120,6 +161,10 @@ class Projects extends StatelessWidget {
                         projectCard3,
                         SizedBox(height: 32),
                         projectCard4,
+                        SizedBox(height: 32),
+                        projectCard5,
+                        SizedBox(height: 32),
+                        projectCard6,
                       ],
                     );
             },
