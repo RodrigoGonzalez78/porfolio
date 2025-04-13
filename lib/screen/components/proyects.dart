@@ -92,7 +92,7 @@ class Projects extends StatelessWidget {
       previewLink: '',
     );
     const ProjectCard projectCard6 = ProjectCard(
-      title: 'Getor de Gastos',
+      title: 'Gestor de Gastos',
       description:
           'Aplicación hecha en flutter que permite gestionar los gastos y ingresos de una persona. Utiliza Provider para la gestión del estado y SQLite para el almacenamiento de datos.',
       imageAsset: 'assets/images/gestion.png',

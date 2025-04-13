@@ -30,13 +30,13 @@ class Certifications extends StatelessWidget {
             runSpacing: 24,
             children: [
               CertificationCard(
-                title: 'Go (Basic) Certificate',
+                title: 'Go (Intermediate) Certificate',
                 institution: 'HackerRank',
                 date: 'Diciembre 2024',
                 description:
-                    'Cubre temas como características básicas del lenguaje Golang, estructuras de datos simples, matrices, mapas, tipos de datos e interfaces.',
+                    'Incluye trabajar con funciones, punteros, manejo de archivos, creación de servicios web en Go y manejo de errores.',
                 icon: FontAwesomeIcons.hackerrank,
-                link: 'https://www.hackerrank.com/certificates/4ab62ad29073',
+                link: 'https://www.hackerrank.com/certificates/09b125616aae',
               ),
               CertificationCard(
                 title: 'SQL (Basic) Certificate',
